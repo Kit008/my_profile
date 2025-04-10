@@ -149,7 +149,7 @@ export default function About() {
       {/* Full Screen Background Image */}
       <div className="fixed inset-0 -z-20">
         <Image
-          src="/background/drawn.png"
+          src="/background/drawn.webp"
           alt="Night background"
           fill
           className="object-cover"
