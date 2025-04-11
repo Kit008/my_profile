@@ -33,8 +33,8 @@ export default function Home() {
     { 
       id: 'home', 
       title: "Hello, I'm Andy   ", 
-      content: "Welcome to my personal profile...",
-      bgImage: '/background/first.png',
+      content: "Welcome to my personal profile.",
+      bgImage: '/background/first.webp',
       stateImage: '/image/gentle_hi.png',
       bonusImage: '/speak/speak_hello.png',
       buttonLink: '/about',
@@ -43,8 +43,8 @@ export default function Home() {
     { 
       id: 'about', 
       title: "About Me", 
-      content: "I have X years of experience...",
-      bgImage: '/background/street_1.png',
+      content: "I have 3 years of technical working experience.",
+      bgImage: '/background/street_1.webp',
       stateImage: '/image/relax.png',
       bonusImage: '/speak/speak_nice.png',
       buttonLink: '/about',
@@ -53,8 +53,8 @@ export default function Home() {
     { 
       id: 'portfolio', 
       title: "My Portfolio", 
-      content: "Here are my recent projects...",
-      bgImage: '/background/sunset.png',
+      content: "Here were projects I participanted in.",
+      bgImage: '/background/sunset.webp',
       stateImage: '/image/should_be.png',
       buttonLink: '/portfolio',
       buttonText: 'View Portfolio'
@@ -62,8 +62,8 @@ export default function Home() {
     { 
       id: 'contact', 
       title: "Let's Connect", 
-      content: "Get in touch with me...",
-      bgImage: '/background/river_view.png',
+      content: "Get in touch with me.",
+      bgImage: '/background/river_view.webp',
       stateImage: '/image/gentle_call.png',
       buttonLink: '/contact',
       buttonText: 'Contact Me'

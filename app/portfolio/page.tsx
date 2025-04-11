@@ -24,22 +24,41 @@ export default function Portfolio() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      coverTitle: "Online Shop",
-      image: "/background/castle.png",
-      innerImage: "/projects/project1-inner.jpg",
-      description: "Full-stack e-commerce solution with React and Node.js...",
-      tags: ["React", "Node.js", "MongoDB"]
+      title: "5+ LLM application project",
+      coverTitle: "LLM application",
+      image: "/background/purple_city.webp",
+      innerImage: "/background/llm_box.webp",
+      description: "Responsible for DevOps across multiple LLM applications, participate in frontend development and UI design. Including managing the Azure DevOps pipeline for continuous integration process, and GitHub version control assistance",
+      tags: ["Vue.js", "Azure DevOps", "Figma"]
     },
     {
       id: 2,
-      title: "Mobile App Design",
-      coverTitle: "Fitness App",
-      image: "/background/tree.png",
-      innerImage: "/projects/project9-inner.jpg",
-      description: "UX/UI design for fitness tracking application...",
-      tags: ["Figma", "UI/UX", "Prototyping"]
+      title: "Speech to Text development",
+      coverTitle: "STT development",
+      image: "/background/tree.webp",
+      innerImage: "/background/speech2text.webp",
+      description: "Responsible for developing the audio preprocessing component for speech-to-text applications, overseeing DevOps for the project, and conducting evaluations. Additionally, partly contributing to STT model fine-tuning.",
+      tags: ["Python", "Devops", "Modelling"]
     },
+    {
+      id: 3,
+      title: "Video Analytics Project",
+      coverTitle: "Video Analytics Project frontend",
+      image: "/background/castle.webp",
+      innerImage: "/background/video_analytics.webp",
+      description: "Responsible for DevOps and UAT testing for the video_anlytics project",
+      tags: ["JavaScript", "Devops", "UAT"]
+    },
+    {
+      id: 4,
+      title: "Video Analytics Project",
+      coverTitle: "Video Analytics Project frontend",
+      image: "/background/upper_view.webp",
+      innerImage: "/background/learnsmart.webp",
+      description: "Responsible for frontend development, UI/UX design and SEO optimization",
+      tags: ["JavaScript", "Figma", "SEO"]
+    },
+    
     // Add more projects as needed
   ];
 
