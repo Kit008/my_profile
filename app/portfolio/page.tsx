@@ -230,9 +230,9 @@ export default function Portfolio() {
       </div>
 
       <nav className="fixed top-0 left-0 w-full p-5 flex justify-between items-center backdrop-blur-lg z-50 bg-black/30">
-        <div className="text-white text-xl font-semibold hover:text-blue-400 transition-colors">
+        <a href='../' className="text-white text-xl font-semibold hover:text-blue-400 transition-colors">
           MyProfile
-        </div>
+        </a>
         <div className="flex gap-5">
           {sections.map(section => (
             <Link 

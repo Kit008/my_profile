@@ -318,18 +318,23 @@ export default function Home() {
         ))}
       </div>
 
+      <div className="fixed inset-0 -z-10 opacity-10">
+        <div className="absolute inset-0 bg-grid-pattern bg-cover"></div>
+      </div>
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full p-5 flex justify-between items-center backdrop-blur-lg z-50">
-        <div className="text-white text-xl font-semibold">MyProfile</div>
+        <a href='./' className="text-white text-xl font-semibold">MyProfile</a>
         <div className="flex gap-5">
           {sections.map(section => (
             <Link 
               key={section.id}
               href={`/${section.id === 'home' ? '' : section.id}`}
-              className={`text-white hover:text-zinc-400 transition-colors ${
-                activeSection === section.id ? 'text-zinc-400 font-medium' : ''
-              }`}
-              aria-current={activeSection === section.id ? 'page' : undefined}
+              className={`text-white hover:text-zinc-400 transition-colors `}
+              // className={`text-white hover:text-zinc-400 transition-colors ${
+              //   activeSection === section.id ? 'text-zinc-400 font-medium' : ''
+              // }`}
+              // aria-current={activeSection === section.id ? 'page' : undefined}
             >
               {section.id.charAt(0).toUpperCase() + section.id.slice(1)}
             </Link>

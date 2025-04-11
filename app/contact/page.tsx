@@ -364,11 +364,14 @@ export default function Contact() {
         </div>
       </div>
 
+      <div className="fixed inset-0 -z-10 opacity-10">
+        <div className="absolute inset-0 bg-grid-pattern bg-cover"></div>
+      </div>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full p-5 flex justify-between items-center backdrop-blur-lg z-50 bg-black/30">
-        <div className="text-white text-xl font-semibold hover:text-green-400 transition-colors">
+        <a href='../' className="text-white text-xl font-semibold hover:text-green-400 transition-colors">
           MyProfile
-        </div>
+        </a>
         <div className="flex gap-5">
           {['home', 'about', 'portfolio', 'contact'].map((item) => (
             <Link 

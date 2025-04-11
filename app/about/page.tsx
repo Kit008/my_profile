@@ -161,12 +161,16 @@ export default function About() {
 
       {/* Animated Particles */}
       <div ref={backgroundRef} className="fixed inset-0 -z-10 overflow-hidden pointer-events-none"></div>
+      
+      <div className="fixed inset-0 -z-10 opacity-10">
+        <div className="absolute inset-0 bg-grid-pattern bg-cover"></div>
+      </div>
 
       {/* Navigation Bar */}
       <nav className="fixed top-0 left-0 w-full p-5 flex justify-between items-center backdrop-blur-md z-50 bg-black/30 border-b border-gray-800/50">
-        <div className="text-white text-xl font-semibold hover:text-orange-400 transition-colors cursor-pointer">
+        <a href='../' className="text-white text-xl font-semibold hover:text-orange-400 transition-colors cursor-pointer">
           MyProfile
-        </div>
+        </a>
         <div className="flex gap-5">
           {sections.map(section => (
             <Link 
@@ -185,7 +189,7 @@ export default function About() {
       {/* Floating Avatar */}
       <a href="/contact" className="floating-avatar fixed right-10 top-3/5 z-20 w-40 h-40 rounded-full overflow-hidden hidden lg:block border-4 border-orange-500/30 shadow-lg">
         <Image 
-          src="/image/stand.png" 
+          src="/image/stand.webp" 
           alt="Profile" 
           width={160}
           height={160}
