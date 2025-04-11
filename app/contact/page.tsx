@@ -337,7 +337,7 @@ export default function Contact() {
       {/* Background */}
       <div className="fixed inset-0 -z-10">
         <Image
-          src="/background/tree.png"
+          src="/background/tree.webp"
           alt="Tree background"
           fill
           className="object-cover"
