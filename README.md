@@ -2,6 +2,22 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+
+## File structure
+details: https://nextjs.org/docs/app/getting-started/project-structure
+
+
+## install nodejs
+download latest version from:
+  https://nodejs.org/zh-tw
+
+Set path through:
+  1. window + R [sysdm.cpl]
+  2. window + W [environ] -> environment variable
+
+On window:
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 First, run the development server:
 
 ```bash
