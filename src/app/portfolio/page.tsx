@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ProjectModal from '@/components/ProjectModal';
 import anime from 'animejs';
+import NavBar from '@/components/NavBar';
+import AnimatedBackground from '@/components/Background';
 
 type Project = {
   id: number;
@@ -43,7 +45,7 @@ export default function Portfolio() {
     {
       id: 3,
       title: "Video Analytics Project",
-      coverTitle: "Video Analytics Project frontend",
+      coverTitle: "Video Analytics Project frontend and DevOps",
       image: "/webp_image/castle.webp",
       innerImage: "/webp_image/video_analytics.webp",
       description: "Responsible for DevOps and UAT testing for the video_anlytics project",
@@ -51,8 +53,8 @@ export default function Portfolio() {
     },
     {
       id: 4,
-      title: "Video Analytics Project",
-      coverTitle: "Video Analytics Project frontend",
+      title: "Learnsmart Education website",
+      coverTitle: "Learnsmart Education SEO and frontend",
       image: "/webp_image/upper_view.webp",
       innerImage: "/webp_image/learnsmart.webp",
       description: "Responsible for frontend development, UI/UX design and SEO optimization",
@@ -209,44 +211,14 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Fullscreen night background */}
-      <div 
-        ref={containerRef}
-        className="fixed inset-0 -z-10 bg-gray-900"
-      >
-        {/* Night sky background image */}
-        <Image
-          src="/background/night.png"
-          alt="Night sky background"
-          fill
-          className="object-cover opacity-70"
-          quality={100}
-          priority
-        />
-      </div>
+      <AnimatedBackground imageAddress={'/webp_image/night.webp'}/>
 
       {/* Floating grid overlay */}
       <div className="fixed inset-0 -z-10 opacity-10">
         <div className="absolute inset-0 bg-grid-pattern bg-cover"></div>
       </div>
 
-      <nav className="fixed top-0 left-0 w-full p-5 flex justify-between items-center backdrop-blur-lg z-50 bg-black/30">
-        <a href='../' className="text-white text-xl font-semibold hover:text-blue-400 transition-colors">
-          MyProfile
-        </a>
-        <div className="flex gap-5">
-          {sections.map(section => (
-            <Link 
-              key={section.id}
-              href={`/${section.id === 'home' ? '' : section.id}`}
-              className={`text-white hover:text-blue-400 transition-colors ${
-                section.id === 'portfolio' ? 'text-blue-400 font-medium' : ''
-              }`}
-            >
-              {section.name}
-            </Link>
-          ))}
-        </div>
-      </nav>
+      <NavBar currentPage='portfolio' themeColor='blue-400'/>
 
       <div className="pt-20"></div>
 

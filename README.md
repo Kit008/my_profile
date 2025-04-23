@@ -3,13 +3,23 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Getting Started
 
 
-## File structure
-details: https://nextjs.org/docs/app/getting-started/project-structure
+## Reference:
+structure details: https://nextjs.org/docs/app/getting-started/project-structure
+tsconfig.json details: https://www.typescriptlang.org/tsconfig/
 
 
 ## install nodejs
 download latest version from:
   https://nodejs.org/zh-tw
+  
+project-root/
+├── src/
+│   ├── app/       # @app
+│   ├── styles/    # @styles
+│   └── components # @components
+├── public/
+├── next.config.ts
+└── package.json
 
 Set path through:
   1. window + R [sysdm.cpl]
@@ -17,6 +27,25 @@ Set path through:
 
 On window:
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+## When change folder path
+tsconfig.json
+    {
+  "compilerOptions": {
++    "baseUrl": ".",
++    "paths": {
++      "@/*": ["./src/*"]
++    }
+  },
+  "include": [
+-    "**/*.ts",
++    "src/**/*.ts",
+  ]
+}
+Regular file
+- import './globals.css'
++ import '@/app/globals.css'
+
 
 First, run the development server:
 

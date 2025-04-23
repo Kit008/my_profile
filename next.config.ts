@@ -1,15 +1,26 @@
 import type { NextConfig } from 'next'
+import path from 'path'
 
 const nextConfig: NextConfig = {
-  output: 'export', // Enables static site generation/export
-  trailingSlash: true, // Adds trailing slashes to URLs
+  output: 'export',
+  trailingSlash: true,
   images: {
-    unoptimized: true, // Required for static exports
+    unoptimized: true,
   },
-  // Optional: Base path if deploying to subdirectory (e.g., /docs)
-  // basePath: '/your-subdirectory',
-  
-  // Optional: Rewrites/redirects for static export
+  // Add Webpack aliases for src directory
+  webpack: (config, { isServer }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
+    }
+
+    if (!isServer) {
+      config.resolve.fallback = { fs: false }
+    }
+    return config
+  },
+  // Keep existing redirects and env
   async redirects() {
     return [
       {
@@ -19,19 +30,8 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  
-  // Optional: Environment variables
   env: {
     API_URL: process.env.API_URL,
-  },
-  
-  // Optional: Webpack configuration
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Client-side only configurations
-      config.resolve.fallback = { fs: false }
-    }
-    return config
   },
 }
 

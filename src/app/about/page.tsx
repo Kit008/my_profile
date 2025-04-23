@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import anime from 'animejs';
+import NavBar from '@/components/NavBar';
+import AnimatedBackground from '@/components/Background';
 
 export default function About() {
   const animationRef = useRef<HTMLDivElement>(null);
@@ -20,7 +22,7 @@ export default function About() {
       if (!backgroundRef.current) return;
       
       const particles = [];
-      const particleCount = 20; // orangeuced for better performance
+      const particleCount = 20; 
       
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -147,44 +149,10 @@ export default function About() {
   return (
     <div className="min-h-screen text-white overflow-hidden relative">
       {/* Full Screen Background Image */}
-      <div className="fixed inset-0 -z-20">
-        <Image
-          src="/webp_image/drawn.webp"
-          alt="Night background"
-          fill
-          className="object-cover"
-          quality={100}
-          priority
-        />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-      </div>
-
-      {/* Animated Particles */}
-      <div ref={backgroundRef} className="fixed inset-0 -z-10 overflow-hidden pointer-events-none"></div>
-      
-      <div className="fixed inset-0 -z-10 opacity-10">
-        <div className="absolute inset-0 bg-grid-pattern bg-cover"></div>
-      </div>
+      <AnimatedBackground imageAddress={'/webp_image/drawn.webp'}/>
 
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 w-full p-5 flex justify-between items-center backdrop-blur-md z-50 bg-black/30 border-b border-gray-800/50">
-        <a href='../' className="text-white text-xl font-semibold hover:text-orange-400 transition-colors cursor-pointer">
-          MyProfile
-        </a>
-        <div className="flex gap-5">
-          {sections.map(section => (
-            <Link 
-              key={section.id}
-              href={`/${section.id === 'home' ? '' : section.id}`}
-              className={`text-white hover:text-orange-400 transition-colors ${
-                section.id === 'about' ? 'text-orange-400 font-medium' : ''
-              }`}
-            >
-              {section.name}
-            </Link>
-          ))}
-        </div>
-      </nav>
+      <NavBar currentPage='about' themeColor= 'rgb(255, 167, 38)'/>
 
       {/* Floating Avatar */}
       <a href="/contact" className="floating-avatar fixed right-10 top-3/5 z-20 w-40 h-40 rounded-full overflow-hidden hidden lg:block border-4 border-orange-500/30 shadow-lg">

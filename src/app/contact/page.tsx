@@ -6,6 +6,8 @@ import anime from 'animejs';
 import emailjs from '@emailjs/browser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import NavBar from '@/components/NavBar';
+import AnimatedBackground from '@/components/Background';
 
 export default function Contact() {
   const characterRef = useRef<HTMLDivElement>(null);
@@ -175,16 +177,16 @@ export default function Contact() {
     setSubmittedData(data);
     
      // Combine customer email with message
-     const fullMessage = `Customer Email: ${data.email}\n\nMessage:\n${data.message}`;
+      const fullMessage = `Customer Email: ${data.email}\n\nMessage:\n${data.message}`;
 
      // Prepare EmailJS parameters
-     const templateParams = {
-       from_name: data.name,
-       from_email: 'fecesman18@gmail.com', // Your constant email
-       to_email: 'fecesman18@gmail.com', // Your constant email
-       cus_email: data.email, // Customer's email
-       message: fullMessage // Combined message
-     };
+      const templateParams = {
+        from_name: data.name,
+        from_email: 'fecesman18@gmail.com', // Your constant email
+        to_email: 'fecesman18@gmail.com', // Your constant email
+        cus_email: data.email, // Customer's email
+        message: fullMessage // Combined message
+      };
     
 
     // Button press animation
@@ -335,17 +337,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/webp_image/tree.webp"
-          alt="Tree background"
-          fill
-          className="object-cover"
-          quality={100}
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 backdrop-blur-sm"></div>
-      </div>
+      <AnimatedBackground imageAddress={'/webp_image/tree.webp'}/>
 
       {/* Animated character */}
       <div 
@@ -368,24 +360,7 @@ export default function Contact() {
         <div className="absolute inset-0 bg-grid-pattern bg-cover"></div>
       </div>
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full p-5 flex justify-between items-center backdrop-blur-lg z-50 bg-black/30">
-        <a href='../' className="text-white text-xl font-semibold hover:text-green-400 transition-colors">
-          MyProfile
-        </a>
-        <div className="flex gap-5">
-          {['home', 'about', 'portfolio', 'contact'].map((item) => (
-            <Link 
-              key={item}
-              href={`/${item === 'home' ? '' : item}`}
-              className={`text-white hover:text-green-400 transition-colors ${
-                item === 'contact' ? 'text-green-400 font-medium' : ''
-              }`}
-            >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </Link>
-          ))}
-        </div>
-      </nav>
+      <NavBar currentPage='contact' themeColor='green-400'></NavBar>
 
       <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold mb-2 text-white text-center">
