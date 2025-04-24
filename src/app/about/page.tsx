@@ -157,7 +157,7 @@ export default function About() {
       {/* Floating Avatar */}
       <a href="/contact" className="floating-avatar fixed right-10 top-3/5 z-20 w-40 h-40 rounded-full overflow-hidden hidden lg:block border-4 border-orange-500/30 shadow-lg">
         <Image 
-          src="/image/stand.webp" 
+          src="/png_image/stand.npg" 
           alt="Profile" 
           width={160}
           height={160}
